@@ -1,0 +1,112 @@
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "aanandi",
+  "password": "password123"
+}
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "andy",
+  "password": "p123"
+}
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "password": "password123"
+}
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "andy",
+  "password": "p123"
+}
+
+###
+
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "aanandi",
+  "password": "password123"
+}
+
+
+###
+
+POST http://localhost:3000/api/notes/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTdiNzkyNWRhOGM3NTI4OWUyYzciLCJpYXQiOjE3MDQ0MTA3MzcsImV4cCI6MTcwNDQxNDMzN30.3YRSN4Q2_fRyAVLReyl3-1KtS1Nz_6fw7OsZedMynaQ
+Content-Type: application/json
+
+{
+  "title": "aaaaaaa test 34343",
+  "content": "yoyoyoyo test 2"
+}
+
+###
+
+# get all notes
+GET http://localhost:3000/api/notes/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTdiNzkyNWRhOGM3NTI4OWUyYzciLCJpYXQiOjE3MDQ0MTA3MzcsImV4cCI6MTcwNDQxNDMzN30.3YRSN4Q2_fRyAVLReyl3-1KtS1Nz_6fw7OsZedMynaQ
+
+###
+
+#Get Notes by id
+GET http://localhost:3000/api/notes/65963d3fe24c2a0f04a24c32
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTdiNzkyNWRhOGM3NTI4OWUyYzciLCJpYXQiOjE3MDQ0MTA3MzcsImV4cCI6MTcwNDQxNDMzN30.3YRSN4Q2_fRyAVLReyl3-1KtS1Nz_6fw7OsZedMynaQ
+
+###
+
+#Update note by id
+
+PUT http://localhost:3000/api/notes/65971b29cdc9b02314bdd335
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTdiNzkyNWRhOGM3NTI4OWUyYzciLCJpYXQiOjE3MDQ0MTA3MzcsImV4cCI6MTcwNDQxNDMzN30.3YRSN4Q2_fRyAVLReyl3-1KtS1Nz_6fw7OsZedMynaQ
+Content-Type: application/json
+
+{
+  "title": "update aaaa test 34343",
+  "content": "yoyoyoyo test 2"
+}
+
+###
+
+#Delete note by id
+
+DELETE http://localhost:3000/api/notes/65963932e24c2a0f04a24c30
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTdiNzkyNWRhOGM3NTI4OWUyYzciLCJpYXQiOjE3MDQ0MTA3MzcsImV4cCI6MTcwNDQxNDMzN30.3YRSN4Q2_fRyAVLReyl3-1KtS1Nz_6fw7OsZedMynaQ
+
+###
+
+#Share notes with other users
+#here shared with user aanandi by john
+
+POST http://localhost:3000/api/notes/65971b1ecdc9b02314bdd332/share
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTdiNzkyNWRhOGM3NTI4OWUyYzciLCJpYXQiOjE3MDQ0MTA3MzcsImV4cCI6MTcwNDQxNDMzN30.3YRSN4Q2_fRyAVLReyl3-1KtS1Nz_6fw7OsZedMynaQ
+Content-Type: application/json
+
+{
+  "sharedUserId": "6596fbf3f835558a6b0bd05a" 
+}
+
+###
+
+#Search with keywords
+GET http://localhost:3000/api/notes/api/search?q=Updated
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk3MTdiNzkyNWRhOGM3NTI4OWUyYzciLCJpYXQiOjE3MDQ0MTA3MzcsImV4cCI6MTcwNDQxNDMzN30.3YRSN4Q2_fRyAVLReyl3-1KtS1Nz_6fw7OsZedMynaQ
+
